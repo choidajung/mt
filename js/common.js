@@ -10,18 +10,22 @@ $(function(){
       // },
     });
 
+    swiper.on('reachEnd', function () {
+		$('.last').css('display','block');
+	});
+
 	function randomImage(){
 
 
 	    var bannerImages=new Array();
 
-	    for (var i = 0; i < 20; i++) {
+	    for (var i = 0; i < 10; i++) {
 	    	bannerImages[i]="../img/"+round+"/"+i+".jpg";
 	    }
 
 	    shuffle(bannerImages);
 	 
-	 	for(var j=0; j<20; j++) {
+	 	for(var j=0; j<10; j++) {
 	 		$('.swiper-slide').eq(j).find('img').attr({src : bannerImages[j]});
 	 	}
 	 

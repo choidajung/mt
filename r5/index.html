@@ -53,34 +53,13 @@
 			<article class="swiper-slide">
 				<img src="">
 			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
-			<article class="swiper-slide">
-				<img src="">
-			</article>
 		</div>
+	</div>
+
+	<div class="last">
+		<h1>clear!</h1>
+		<p>score : 10</p>
+		<h2><a href="../index.html">처음으로</a></h2>
 	</div>
 	
 	<div id="ViewTimer"></div>
@@ -102,7 +81,7 @@
 		function msg_time() {	// 1초씩 카운트
 			m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";	// 남은 시간 계산
 			
-			var msg = "<font color='red'>" + m + "</font>";
+			var msg = "<font>" + m + "</font>";
 			var score = $('.swiper-slide-active').index();
 			
 			document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!-------------------------------------------------------------------------------------------------->
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-------------------------------------------------------------------------------------------------->
+	<title>Round6</title>
+	<link rel="stylesheet" type="text/css" href="../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../css/common.css">
+	<link rel="stylesheet" type="text/css" href="../css/swiper.css">
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script src="../js/common.js"></script>
+	<script src="../js/swiper.min.js"></script>
+</head>
+
+<body class="rbody">
+
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+			<article class="swiper-slide">
+				<img src="">
+			</article>
+		</div>
+	</div>
+
+	<div class="last">
+		<h1>clear!</h1>
+		<p>score : 10</p>
+		<h2><a href="../index.html">처음으로</a></h2>
+	</div>
+	
+	<div id="ViewTimer"></div>
+
+	<div class="over">
+		 <h1>시간 초과!</h1>
+		<p>score : <b id="score"></b></p>
+		<h2><a href="../index.html">처음으로</a></h2>
+	</div>
+	
+	<script>
+		var round=11;
+	</script>
+
+	<script language="JavaScript">
+	
+		var SetTime = 120;		// 최초 설정 시간(기본 : 초)
+
+		function msg_time() {	// 1초씩 카운트
+			m = Math.floor(SetTime / 60) + "분 " + (SetTime % 60) + "초";	// 남은 시간 계산
+			
+			var msg = "<font>" + m + "</font>";
+			var score = $('.swiper-slide-active').index();
+			
+			document.all.ViewTimer.innerHTML = msg;		// div 영역에 보여줌 
+					
+			SetTime--;					// 1초씩 감소
+			
+			if (SetTime < 0) {			// 시간이 종료 되었으면..
+				clearInterval(tid);		// 타이머 해제
+				document.all.score.innerHTML = score;
+				$('.over').css('display','block');
+			}
+		}
+
+		window.onload = function TimerStart(){ tid=setInterval('msg_time()',1000) };
+		
+	</script>
+
+</body>
+</html>
